@@ -1,0 +1,19 @@
+import tkinter as tk
+import Classes_and_Objects as CO
+import functions as F
+
+
+window = tk.Tk()
+
+
+gamespace = CO.GameBoard(window)
+F.create_board_spaces(gamespace)
+F.create_game_pieces(gamespace)
+
+
+window.grid_columnconfigure(0, weight=1)
+
+
+tk.Button(window, text="Display Help", command=F.display_help, bd=5).grid(row=8, column=0, columnspan=8, pady=25)
+tk.Button(window, text="Quit", command=quit, bd=5).grid(row=9, column=0, columnspan=8, pady=25)
+window.mainloop()
